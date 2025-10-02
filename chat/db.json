@@ -1,3 +1,10 @@
 {
-  "users": []
+  "users": [
+    {
+      "id": "21b82ebf-3475-4b37-843f-436bb851e635",
+      "nome": "Lucas",
+      "email": "lucas@email.com",
+      "senha": "$2b$10$zEFTD5rm.Z74hS4ewOo/eOwJmyf.M6TO6SCL.FbBhbgKJqjJ2RHNK"
+    }
+  ]
 }

@@ -1,5 +1,7 @@
 npm init -y
 npm install express bcryptjs jsonwebtoken uuid fs
+npm uninstall uuid
+npm install uuid@8
 
 project/
 ├─ db.json
@@ -14,5 +16,33 @@ project/
 └─ routes/
      ├─ auth.js
      └─ users.js
+
+     🔹 Exemplos de chamadas no Thunder Client
+
+Registrar → POST http://localhost:3000/auth/register
+{
+  "nome": "Lucas",
+  "email": "lucas@email.com",
+  "senha": "123456"
+}
+
+Login → POST http://localhost:3000/auth/login
+{
+  "email": "lucas@email.com",
+  "senha": "123456"
+}
+
+Listar usuários → GET http://localhost:3000/users
+
+Buscar usuário por ID → GET http://localhost:3000/users/:id
+
+Atualizar → PUT http://localhost:3000/users/:id
+{
+  "nome": "Lucas Atualizado",
+  "email": "novo@email.com",
+  "senha": "123456"
+}
+
+Deletar → DELETE http://localhost:3000/users/:id
 
      
