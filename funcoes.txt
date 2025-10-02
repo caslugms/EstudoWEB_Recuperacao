@@ -1,0 +1,8 @@
+db.json        → banco de dados em arquivo JSON
+server.js      → ponto de entrada da aplicação
+utils/db.js    → funções para ler/escrever no db.json
+middleware/auth.js → valida JWT
+controllers/authController.js → login e registro
+controllers/usersController.js → CRUD usuários
+routes/auth.js → rotas de autenticação
+routes/users.js → rotas CRUD

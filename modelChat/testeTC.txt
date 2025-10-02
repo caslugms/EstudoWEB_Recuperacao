@@ -1,0 +1,101 @@
+1️⃣ Instalar o Thunder Client
+
+Ele é uma extensão do VS Code.
+
+Vá em Extensões → busque Thunder Client → instalar.
+
+Abra o Painel do Thunder Client no VS Code.
+
+2️⃣ Criar uma nova requisição
+
+Clique em New Request.
+
+Escolha o método HTTP: GET, POST, PUT, DELETE.
+
+Digite a URL da sua API, ex:
+
+http://localhost:3000/auth/register
+
+3️⃣ Configurar o Body (para POST e PUT)
+
+Clique em Body → selecione JSON.
+
+Exemplo para criar usuário:
+
+{
+  "nome": "Lucas",
+  "email": "lucas@gmail.com",
+  "senha": "123456"
+}
+
+
+Clique Send → deve aparecer a resposta da API.
+
+4️⃣ Configurar Headers (para JWT)
+
+Para rotas protegidas (/users, /products, /tasks), você precisa enviar token JWT.
+
+No Thunder Client:
+
+Vá em Headers.
+
+Adicione:
+
+Key: Authorization
+Value: Bearer SEU_TOKEN
+
+
+SEU_TOKEN é o token que você recebe no login (POST /auth/login).
+
+5️⃣ Testar todas as rotas CRUD
+5.1 POST → criar
+
+URL: /entity ou /auth/register
+
+Body JSON com os campos do recurso.
+
+Enviar → deve criar novo registro.
+
+5.2 GET → listar todos
+
+URL: /entity
+
+Header JWT se protegido.
+
+Enviar → deve retornar lista.
+
+5.3 GET/:id → buscar específico
+
+URL: /entity/ID_DO_REGISTRO
+
+Header JWT se protegido.
+
+Enviar → retorna registro específico.
+
+5.4 PUT → atualizar
+
+URL: /entity/ID_DO_REGISTRO
+
+Header JWT
+
+Body JSON com campos que quer atualizar.
+
+Enviar → retorna registro atualizado.
+
+5.5 DELETE → remover
+
+URL: /entity/ID_DO_REGISTRO
+
+Header JWT
+
+Enviar → retorna mensagem de sucesso.
+
+6️⃣ Dicas rápidas
+
+Sempre faça POST primeiro para ter algum registro para testar GET, PUT e DELETE.
+
+Sempre copie o token do login para usar nas rotas protegidas.
+
+Se der erro 401 → provavelmente esqueceu o header Authorization.
+
+Se der erro 404 → ID do registro não existe.
